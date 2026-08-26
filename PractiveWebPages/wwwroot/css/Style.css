@@ -1,0 +1,46 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+header {
+    height: 100px;
+    background-color: blue;
+    color: white;  
+}
+
+.middle {
+    height: 500px;
+    background-color: lightgray;
+}
+
+.logo {
+    float: left;
+    width:50%;
+}
+
+.menu {
+    float: right;
+    width: 50%;
+    color:white;
+}
+    .menu ul li {
+        display: inline-block;
+        margin-left: 20px;
+    
+    }
+        .menu ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+footer {
+    height: 100px;
+    background-color: blue;
+    color: white;
+}

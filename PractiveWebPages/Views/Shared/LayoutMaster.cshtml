@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="logo">   
+            <h1>Logo</h1>
+        </div>
+        <div class="menu">
+            <ul>    
+                <li><a href="@Url.Action("Home", "Custom")">Home</a></li>
+                <li><a href="@Url.Action("AboutUs", "Custom")">About Us</a></li>
+                <li><a href="@Url.Action("ContactUs", "Custom")">Contact Us</a></li>
+                <li><a href="@Url.Action("Location", "Custom")">Location</a></li>
+                <li><a href="@Url.Action("Ratings", "Custom")">Ratings</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <div class="middle">
+        @RenderBody()
+    </div>
+    
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+</body>
+</html>
