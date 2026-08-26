@@ -1,0 +1,28 @@
+﻿@model PractiveWebPages.Models.SI
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Simple Interest Calculator</h1>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label asp-for="Principal"></label>
+        <input asp-for="Principal" />
+    </div>
+
+    <div>
+        <label asp-for="Rate"></label>
+        <input asp-for="Rate" />
+    </div>
+
+    <div>
+        <label asp-for="Time"></label>
+        <input asp-for="Time" />
+    </div>
+
+    <button type="submit">Calculate</button>
+
+</form>
