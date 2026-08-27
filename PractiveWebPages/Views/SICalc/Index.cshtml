@@ -27,4 +27,7 @@
 
 </form>
 
-@ViewBag.SimpleInterest != null ? $"<h2>Simple Interest: {ViewBag.SimpleInterest}</h2>" : ""
+@if (ViewBag.SimpleInterest != null)
+{
+    <h2>@ViewBag.SimpleInterest</h2>
+}
