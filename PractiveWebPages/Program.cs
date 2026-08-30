@@ -1,7 +1,11 @@
+using PractiveWebPages.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<AdditionService>();
+
+// Add services to the container.
 
 var app = builder.Build();
 
@@ -22,7 +26,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=ActionResult}/{action=Index}/{id?}")
+    pattern: "{controller=Addition}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 
