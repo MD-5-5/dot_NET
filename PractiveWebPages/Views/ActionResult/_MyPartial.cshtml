@@ -1,0 +1,837 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Developer Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                background: #080b12;
+                color: #e6edf3;
+                font-family: Arial, sans-serif;
+            }
+
+            .navbar {
+                background: rgba(8, 11, 18, 0.92);
+                backdrop-filter: blur(12px);
+                border-bottom: 1px solid #202633;
+            }
+
+            .navbar-brand {
+                font-weight: 800;
+                font-size: 25px;
+            }
+
+            .navbar-brand span {
+                color: #00d4ff;
+            }
+
+            .nav-link {
+                color: #aeb8c8 !important;
+                margin-left: 20px;
+                transition: 0.3s;
+            }
+
+            .nav-link:hover {
+                color: #00d4ff !important;
+            }
+
+            .hero {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                padding-top: 80px;
+                background:
+                    radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.13), transparent 30%),
+                    radial-gradient(circle at 10% 80%, rgba(124, 58, 237, 0.12), transparent 30%);
+            }
+
+            .hero-small {
+                color: #00d4ff;
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+
+            .hero h1 {
+                font-size: clamp(45px, 7vw, 80px);
+                font-weight: 800;
+                line-height: 1.05;
+            }
+
+            .hero h1 span {
+                color: #00d4ff;
+            }
+
+            .hero p {
+                color: #9ca8b8;
+                font-size: 19px;
+                line-height: 1.8;
+                max-width: 650px;
+                margin-top: 25px;
+            }
+
+            .btn-main {
+                background: #00d4ff;
+                color: #061018;
+                border: none;
+                font-weight: 700;
+                padding: 13px 25px;
+                border-radius: 8px;
+            }
+
+            .btn-main:hover {
+                background: #35ddff;
+                color: #061018;
+                transform: translateY(-2px);
+            }
+
+            .btn-outline-custom {
+                border: 1px solid #344052;
+                color: white;
+                padding: 13px 25px;
+                border-radius: 8px;
+            }
+
+            .btn-outline-custom:hover {
+                border-color: #00d4ff;
+                color: #00d4ff;
+            }
+
+            .code-card {
+                background: #0e131c;
+                border: 1px solid #273142;
+                border-radius: 18px;
+                padding: 25px;
+                box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+            }
+
+            .terminal-top {
+                display: flex;
+                gap: 7px;
+                margin-bottom: 20px;
+            }
+
+            .dot {
+                width: 11px;
+                height: 11px;
+                border-radius: 50%;
+                background: #555;
+            }
+
+            .code-line {
+                color: #91a0b5;
+                margin: 9px 0;
+            }
+
+            .blue {
+                color: #00d4ff;
+            }
+
+            .purple {
+                color: #b084ff;
+            }
+
+            .green {
+                color: #65d98b;
+            }
+
+            section {
+                padding: 100px 0;
+            }
+
+            .section-title {
+                text-align: center;
+                margin-bottom: 55px;
+            }
+
+            .section-title h2 {
+                font-size: 42px;
+                font-weight: 800;
+            }
+
+            .section-title span {
+                color: #00d4ff;
+            }
+
+            .section-title p {
+                color: #8793a5;
+                margin-top: 12px;
+            }
+
+            .skill-card {
+                background: #0e131c;
+                border: 1px solid #242d3b;
+                border-radius: 14px;
+                padding: 25px;
+                height: 100%;
+                transition: 0.3s;
+            }
+
+            .skill-card:hover {
+                transform: translateY(-7px);
+                border-color: #00d4ff;
+                box-shadow: 0 15px 35px rgba(0, 212, 255, 0.08);
+            }
+
+            .skill-icon {
+                font-size: 30px;
+                color: #00d4ff;
+                margin-bottom: 15px;
+            }
+
+            .skill-card h5 {
+                font-weight: 700;
+            }
+
+            .skill-card p {
+                color: #8793a5;
+                margin: 0;
+            }
+
+            .badge-tech {
+                background: #151d2a;
+                border: 1px solid #293548;
+                color: #b9c5d6;
+                padding: 9px 13px;
+                border-radius: 7px;
+                margin: 4px;
+                display: inline-block;
+                font-size: 14px;
+            }
+
+            .project-card {
+                background: #0e131c;
+                border: 1px solid #242d3b;
+                border-radius: 16px;
+                padding: 30px;
+                height: 100%;
+                transition: 0.3s;
+            }
+
+            .project-card:hover {
+                transform: translateY(-7px);
+                border-color: #00d4ff;
+            }
+
+            .project-card h4 {
+                margin-bottom: 15px;
+            }
+
+            .project-card p {
+                color: #8793a5;
+                line-height: 1.7;
+            }
+
+            .project-icon {
+                font-size: 38px;
+                color: #00d4ff;
+                margin-bottom: 20px;
+            }
+
+            .stats {
+                border-top: 1px solid #242d3b;
+                border-bottom: 1px solid #242d3b;
+                padding: 35px 0;
+            }
+
+            .stat h3 {
+                font-size: 38px;
+                color: #00d4ff;
+                font-weight: 800;
+            }
+
+            .stat p {
+                color: #8793a5;
+                margin: 0;
+            }
+
+            .contact-box {
+                background: linear-gradient(135deg, #101925, #0b1018);
+                border: 1px solid #293548;
+                border-radius: 20px;
+                padding: 60px 30px;
+                text-align: center;
+            }
+
+            .contact-box h2 {
+                font-size: 42px;
+                font-weight: 800;
+            }
+
+            .contact-box p {
+                color: #8793a5;
+                font-size: 18px;
+                margin: 20px auto 30px;
+                max-width: 650px;
+            }
+
+            .social {
+                color: #9ca8b8;
+                font-size: 25px;
+                margin: 0 10px;
+                transition: 0.3s;
+            }
+
+            .social:hover {
+                color: #00d4ff;
+            }
+
+            footer {
+                border-top: 1px solid #202633;
+                padding: 25px 0;
+                color: #697589;
+            }
+
+            @@media (max-width: 991px) {
+                .hero {
+                    text-align: center;
+                }
+
+                .hero p {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                .code-card {
+                    margin-top: 50px;
+                }
+
+                .nav-link {
+                    margin-left: 0;
+                }
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#">
+                Dev<span>.</span>
+            </a>
+
+            <button class="navbar-toggler bg-light"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+
+                    <div class="hero-small">
+                        <i class="bi bi-code-slash"></i>
+                        Software Developer
+                    </div>
+
+                    <h1>
+                        Building
+                        <span>Scalable</span>
+                        Digital Experiences.
+                    </h1>
+
+                    <p>
+                        I build modern, scalable and reliable applications
+                        using backend technologies, cloud infrastructure,
+                        microservices and modern JavaScript frameworks.
+                    </p>
+
+                    <div class="mt-4">
+
+                        <a href="#projects"
+                           class="btn btn-main me-2">
+                            View Projects
+                        </a>
+
+                        <a href="#contact"
+                           class="btn btn-outline-custom">
+                            Contact Me
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-5">
+
+                    <div class="code-card">
+
+                        <div class="terminal-top">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+
+                        <div class="code-line">
+                            <span class="purple">const</span>
+                            developer = {
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;name:
+                            <span class="green">"Dev"</span>,
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;role:
+                            <span class="green">"Software Developer"</span>,
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;backend:
+                            <span class="blue">"Node.js"</span>,
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;cloud:
+                            <span class="blue">"AWS"</span>,
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;devOps:
+                            <span class="green">true</span>
+                        </div>
+
+                        <div class="code-line">
+                            };
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+        <div class="container">
+
+            <div class="row text-center">
+
+                <div class="col-md-3 stat">
+                    <h3>450+</h3>
+                    <p>LeetCode Problems</p>
+                </div>
+
+                <div class="col-md-3 stat">
+                    <h3>10+</h3>
+                    <p>Technologies</p>
+                </div>
+
+                <div class="col-md-3 stat">
+                    <h3>3+</h3>
+                    <p>Cloud & DevOps Tools</p>
+                </div>
+
+                <div class="col-md-3 stat">
+                    <h3>∞</h3>
+                    <p>Things to Build</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>My <span>Tech Stack</span></h2>
+
+                <p>
+                    Technologies I use to build scalable applications.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+
+                        <h5>Languages</h5>
+
+                        <p>
+                            C++, JavaScript, TypeScript
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="bi bi-window-stack"></i>
+                        </div>
+
+                        <h5>Frontend</h5>
+
+                        <p>
+                            React.js, Next.js, Tailwind CSS, SCSS
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="bi bi-server"></i>
+                        </div>
+
+                        <h5>Backend</h5>
+
+                        <p>
+                            Node.js, Express.js, REST APIs,
+                            WebSockets, Socket.io
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="bi bi-database"></i>
+                        </div>
+
+                        <h5>Databases</h5>
+
+                        <p>
+                            MongoDB, Redis, Supabase
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="bi bi-cloud"></i>
+                        </div>
+
+                        <h5>Cloud & DevOps</h5>
+
+                        <p>
+                            AWS EC2, S3, EKS, Docker,
+                            Kubernetes, CI/CD
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+
+                        <h5>Architecture</h5>
+
+                        <p>
+                            Microservices, Distributed Systems,
+                            Scalability & Performance
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-center mt-5">
+
+                <span class="badge-tech">C++</span>
+                <span class="badge-tech">JavaScript</span>
+                <span class="badge-tech">TypeScript</span>
+                <span class="badge-tech">React</span>
+                <span class="badge-tech">Next.js</span>
+                <span class="badge-tech">Node.js</span>
+                <span class="badge-tech">Express</span>
+                <span class="badge-tech">MongoDB</span>
+                <span class="badge-tech">Redis</span>
+                <span class="badge-tech">Docker</span>
+                <span class="badge-tech">Kubernetes</span>
+                <span class="badge-tech">AWS</span>
+                <span class="badge-tech">Git</span>
+                <span class="badge-tech">GitHub</span>
+                <span class="badge-tech">CI/CD</span>
+                <span class="badge-tech">REST APIs</span>
+                <span class="badge-tech">WebSockets</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Featured <span>Projects</span></h2>
+
+                <p>
+                    Some things I've built using modern technologies.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+
+                        <h4>Scalable Backend</h4>
+
+                        <p>
+                            A scalable backend architecture using
+                            Node.js, Express, REST APIs and
+                            microservices.
+                        </p>
+
+                        <span class="badge-tech">Node.js</span>
+                        <span class="badge-tech">Express</span>
+                        <span class="badge-tech">MongoDB</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4">
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            <i class="bi bi-chat-dots"></i>
+                        </div>
+
+                        <h4>Real-Time Application</h4>
+
+                        <p>
+                            Real-time communication application
+                            using WebSockets and Socket.io with
+                            scalable backend architecture.
+                        </p>
+
+                        <span class="badge-tech">WebSockets</span>
+                        <span class="badge-tech">Socket.io</span>
+                        <span class="badge-tech">Redis</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4">
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                        </div>
+
+                        <h4>Cloud Deployment</h4>
+
+                        <p>
+                            Containerized applications deployed
+                            using Docker, Kubernetes and AWS
+                            infrastructure with CI/CD.
+                        </p>
+
+                        <span class="badge-tech">Docker</span>
+                        <span class="badge-tech">Kubernetes</span>
+                        <span class="badge-tech">AWS</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>Let's Build Something <span class="blue">Great.</span></h2>
+
+                <p>
+                    Have a project, idea or opportunity?
+                    Let's connect and build something impactful together.
+                </p>
+
+                <a href="mailto:yourmail@example.com"
+                   class="btn btn-main">
+                    <i class="bi bi-envelope"></i>
+                    Get In Touch
+                </a>
+
+                <div class="mt-4">
+
+                    <a href="#" class="social">
+                        <i class="bi bi-github"></i>
+                    </a>
+
+                    <a href="#" class="social">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href="#" class="social">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container text-center">
+
+            <p class="mb-0">
+                © 2026 Developer Portfolio. Built with
+                ASP.NET Core & Bootstrap.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+</html>

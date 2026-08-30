@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Calculator";
+    Layout = "~/Views/Shared/LayoutMaster.cshtml";
+}
+
+<h1>Calculator</h1>
+
+<form asp-action="Index">
+
+    <p>
+        <input type="number" name="num1" placeholder="Enter first number" />
+    </p>
+
+    <p>
+        <input type="number" name="num2" placeholder="Enter second number" />
+    </p>
+
+    <p>
+        <input type="submit" name="operation" value="+" />
+        <input type="submit" name="operation" value="-" />
+        <input type="submit" name="operation" value="*" />
+        <input type="submit" name="operation" value="/" />
+    </p>
+
+</form>
